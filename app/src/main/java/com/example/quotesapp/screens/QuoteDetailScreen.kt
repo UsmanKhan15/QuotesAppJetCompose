@@ -6,6 +6,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -38,7 +39,7 @@ fun QuoteDetail(quote: Quote) {
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
-            .fillMaxWidth(1f)
+            .fillMaxSize()  // Use fillMaxSize() to cover the whole screen
             .background(
                 Brush.sweepGradient(
                     colors = listOf(
@@ -47,12 +48,15 @@ fun QuoteDetail(quote: Quote) {
                     )
                 )
             )
-    ){
+    ) {
         Card(
             elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
-            modifier = Modifier.padding(32.dp)) {
-            Column(verticalArrangement = Arrangement.Center,
-                modifier = Modifier.padding(16.dp)) {
+            modifier = Modifier.padding(32.dp)
+        ) {
+            Column(
+                verticalArrangement = Arrangement.Center,
+                modifier = Modifier.padding(16.dp)
+            ) {
                 Image(
                     imageVector = Icons.Filled.Favorite,
                     contentDescription = "Quote",
